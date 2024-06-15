@@ -6,10 +6,7 @@ from <https://github.com/PaddlePaddle/PaddleOCR/blob/795c81f1835725dbf9bf9f5a13e
 
 ## det model
 
-ml_PP-OCRv3_det  
-[New] Original lightweight detection model, supporting English
-
-<https://paddleocr.bj.bcebos.com/PP-OCRv3/multilingual/Multilingual_PP-OCRv3_det_infer.tar>
+The ppocr_v3 multilingual detection model does not work. I suggest you use the ppocr_v4 Chinese detection model.
 
 ## rec model
 
