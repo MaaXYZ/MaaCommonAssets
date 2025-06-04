@@ -3,6 +3,10 @@ name: mirrorchyan_uploading
 on:
   workflow_dispatch:
   push:
+    branches:
+      - "main"
+    paths:
+      - "OCR"
 
 jobs:
   mirrorchyan:
@@ -33,6 +37,6 @@ jobs:
         with:
           filetype: local
           mirrorchyan_rid: MaaCommonAssets
-          filename: mirrorchyan.zip
+          pick_files: '["OCR"]'
           version_name: ${{ steps.version_name.outputs.version }}
           upload_token: ${{ secrets.MirrorChyanUploadToken }}
