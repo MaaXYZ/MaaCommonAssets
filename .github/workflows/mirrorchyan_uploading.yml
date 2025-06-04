@@ -16,13 +16,16 @@ jobs:
           version=$(git log --pretty=format:"%ad" --date=iso -1)
           release_note=$(git log --pretty=format:"%ad %h %s" --date=iso -1)
 
+          echo "version=$version" | tee -a "$GITHUB_OUTPUT"
+          echo "release_note=$release_note" | tee -a "$GITHUB_OUTPUT"
+
       - uses: MirrorChyan/release-note-action@v1
         with:
           mirrorchyan_rid: MaaCommonAssets
 
           version_name: ${{ steps.version_name.outputs.version }}
           release_note: ${{ steps.version_name.outputs.release_note }}
-          
+
           upload_token: ${{ secrets.MirrorChyanUploadToken }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
