@@ -1,0 +1,36 @@
+name: mirrorchyan_uploading
+
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  mirrorchyan:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Version Name
+        id: version_name
+        run: |
+          version=$(git log --pretty=format:"%ad" --date=iso -1)
+          release_note=$(git log --pretty=format:"%ad %h %s" --date=iso -1)
+
+      - uses: MirrorChyan/release-note-action@v1
+        with:
+          mirrorchyan_rid: MaaCommonAssets
+
+          version_name: ${{ steps.version_name.outputs.version }}
+          release_note: ${{ steps.version_name.outputs.release_note }}
+          
+          upload_token: ${{ secrets.MirrorChyanUploadToken }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: MirrorChyan/uploading-action@v1
+        with:
+          filetype: local
+          mirrorchyan_rid: MaaCommonAssets
+          filename: mirrorchyan.zip
+          extra_zip: true
+          version_name: ${{ steps.version_name.outputs.version }}
+          upload_token: ${{ secrets.MirrorChyanUploadToken }}
