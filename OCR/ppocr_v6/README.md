@@ -1,23 +1,3 @@
-# PaddleOCR model
+# 多语言说明
 
-2026/06/12
-
-from <https://www.paddleocr.ai/main/version3.x/algorithm/PP-OCRv6/PP-OCRv6.html>
-
-## det model
-
-PP-OCRv6_small_det  
-PP-OCRv6 的 small 档文本检测模型，面向移动端/桌面端的速度与精度平衡场景。
-
-<https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0.0/PP-OCRv6_small_det_onnx_infer.tar>
-
-## rec model
-
-PP-OCRv6_small_rec  
-PP-OCRv6 的 small 档文本识别模型，支持简体中文、繁体中文、英文、日文及 46 种拉丁语系语言。
-
-<https://paddle-model-ecology.bj.bcebos.com/paddlex/official_inference_model/paddle3.0.0/PP-OCRv6_small_rec_onnx_infer.tar>
-
-## rec label
-
-from `PP-OCRv6_small_rec_onnx_infer.tar/inference.yml`
+据 PaddleOCR [官方介绍](https://github.com/PaddlePaddle/PaddleOCR/blob/main/docs/version3.x/algorithm/PP-OCRv6/PP-OCRv6.md)，PP-OCRv6 在语言覆盖方面实现重大突破，medium/small 档单一模型统一支持简体中文、繁体中文、英文、日文及 46 种拉丁语系语言共 50 种语言（tiny 档支持 49 种，不含日文）。
